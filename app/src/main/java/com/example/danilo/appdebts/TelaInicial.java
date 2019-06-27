@@ -7,7 +7,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.danilo.appdebts.Classes.Category;
 import com.example.danilo.appdebts.Database.DataBaseHelper;
+import com.example.danilo.appdebts.dao.CategoryDAO;
 
 public class TelaInicial extends AppCompatActivity {
 
@@ -19,7 +21,16 @@ public class TelaInicial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
+
         mLayout = findViewById(R.id.layout);
+
+
+        createConnection();
+        Category cat = new Category("Tia do Lanche");
+        CategoryDAO catDao = new CategoryDAO(mConection);
+        catDao.insert(cat);
+        catDao.listCategories();
+        mConection.close();
     }
 
     private void createConnection() {

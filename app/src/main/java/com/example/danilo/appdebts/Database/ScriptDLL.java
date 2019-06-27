@@ -27,4 +27,10 @@ public class ScriptDLL {
         return sql.toString();
 
     }
+
+    public static String getCategories(){
+        return  "select * from categories";
+    }
+
+
 }
