@@ -42,4 +42,5 @@ public class TelaInicial extends AppCompatActivity {
             Snackbar.make(mLayout, e.toString(), Snackbar.LENGTH_LONG).show();
         }
     }
+    
 }
